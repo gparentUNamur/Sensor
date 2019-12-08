@@ -8,6 +8,7 @@ class TemperatureSensor:
     def __init__(self, channel):
         self.channel = channel
         self.voltageRatioInput.setChannel(channel)
+        self.voltageRatioInput.openWaitForAttachment(5000)
         self.voltageRatioInput.setSensorType(SensorType=VoltageRatioSensorType.SENSOR_TYPE_1124)
 
     def get_temperature(self):

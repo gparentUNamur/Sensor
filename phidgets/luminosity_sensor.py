@@ -7,6 +7,7 @@ class LuminositySensor:
     def __init__(self, channel):
         self.channel = channel
         self.voltageRatio.setChannel(channel)
+        self.voltageRatio.open()
 
     def get_luminosity(self):
         return self.voltageRatio.getVoltageRatio() * 200
